@@ -1,0 +1,25 @@
+{
+  "currentAnswer": {
+    "questionId": "2",
+    "answers": [{
+      "ids": "3"
+    },
+      {
+        "id": "4"
+      }
+    ]
+  },
+  "previousAnswers": [{
+    "questionId": "3",
+    "answers": [{
+      "id": "2"
+    }]
+  },
+    {
+      "questionId": "4",
+      "answers": [{
+        "id": "1"
+      }]
+    }
+  ]
+}

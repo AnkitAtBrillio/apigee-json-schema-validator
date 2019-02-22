@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "definitions": {
+    "next": {
+      "type": "object",
+      "properties": {
+        "questionId": {
+          "type": "string",
+          "description": "This is the unique id associated to current or previous question that is answered by user"
+        },
+        "answers": {
+          "type": "array",
+          "items": [{
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "This is the unique id associated to the answer user selected for the above question. This can be multiple selections and hence array"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "id"
+            ]
+          }]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "currentAnswer": {
+      "$ref": "#/definitions/next"
+
+    },
+    "previousAnswers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/next"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "currentAnswer",
+    "previousAnswers"
+  ]
+}
